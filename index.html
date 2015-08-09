@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Underscore.js - Filter State</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+
+	<style type="text/css">
+		
+		.disabled span {
+			color: #cccccc
+		}
+
+		#filter-state li[data-action="true"] {
+			display: none;
+		}
+
+		#filter-city li {
+			display: block;
+			clear: both;
+		}
+
+	</style>
+</head>
+<body>
+
+
+	<div id="header">
+		<div id="filter-state">
+			<span>Selecione um estado</span>
+
+			<ul class="list">
+				
+				<li data-state="AC">Acre</li>
+				<li data-state="AL">Alagoas </li>
+				<li data-state="AP">Amapá</li>
+				<li data-state="AM">Amazonas</li>
+				<li data-state="BA">Bahia </li>
+				<li data-state="CE">Ceará</li>
+				<li data-state="DF">Distrito Federal</li>
+				<li data-state="ES">Espírito Santo</li>
+				<li data-state="GO">Goiás</li>
+				<li data-state="MA">Maranhão</li>
+				<li data-state="MT">Mato Grosso</li>
+				<li data-state="MS">Mato Grosso do Sul</li>
+				<li data-state="MG">Minas Gerais</li>
+				<li data-state="PA">Pará</li>
+				<li data-state="PB">Paraíba</li>
+				<li data-state="PR">Paraná</li>
+				<li data-state="PE">Pernambuco</li>
+				<li data-state="PI">Piauí</li>
+				<li data-state="RJ">Rio de Janeiro</li>
+				<li data-state="RN">Rio Grande do Norte</li>
+				<li data-state="RS">Rio Grande do Sul</li>
+				<li data-state="RO">Rondônia</li>
+				<li data-state="RR">Roraima</li>
+				<li data-state="SC">Santa Catarina</li>
+				<li data-state="SP">São Paulo</li>
+				<li data-state="SE">Sergipe</li>
+				<li data-state="TO">Tocantins</li>
+
+			</ul>
+		</div>	
+
+		<div id="filter-city">
+			<span>Selecione uma cidade</span>
+
+			<ul class="list"></ul>
+		</div>	
+	</div>
+
+	<div id="filter-main">
+		<ul class="list"></ul>
+	</div>
+
+	<script src="js/lib/jquery.2.1.4.min.js"></script>
+	<script src="js/lib/underscore.min.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+</html>
