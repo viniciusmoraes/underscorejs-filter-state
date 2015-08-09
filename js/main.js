@@ -8,6 +8,7 @@ Filter = {
 	selectState: "filter-state",
 	selectCity: "filter-city",
 	selectMain: "filter-main",
+	selectButton: "select-list",
 
 	init : function(){
 		this.get();
@@ -48,9 +49,11 @@ Filter = {
 		}).done(function(data){
 			_this.collection = data;
 			_this.selected();
-			//_this.disabled();
+			_this.disabled();
 			_this.clickState();
 			_this.clickCity();
+			_this.clickToggle();
+			_this.changeText();
 		});
 	},
 
@@ -119,7 +122,33 @@ Filter = {
 			var id = $(this).attr("data-city");
 			_this.filterBy(id);			
 		});	
+	},
+
+	clickToggle : function(){
+		var _this = this;
+		$(document).on('click', '.' + this.selectButton, function(){
+			if ($(this).hasClass('disabled') != true) {
+				$(this).find('.list').toggle();
+			}
+		});
+	},
+
+	changeText : function(){
+		var _this = this;
+
+		$(document).on('click', '.' + this.selectButton + ' li', function(){
+			$(this).parent().siblings('span').empty();
+			console.log($(this).parent().parent()[0].id);
+			if($(this).parent().parent()[0].id == _this.selectState){
+				var attr = $(this).text();
+				$(this).parent().siblings('span').text(attr);
+			}else {
+				var attr = $(this).attr("data-city");
+				$(this).parent().siblings('span').text(attr);
+			}
+		});
 	}
+
 };
 
 (function($){

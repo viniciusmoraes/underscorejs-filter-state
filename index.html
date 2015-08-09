@@ -4,15 +4,61 @@
 	<title>Underscore.js - Filter State</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
 
 	<style type="text/css">
 		
+		#header{overflow: hidden;}
+		#header .list{
+			display: none;
+		}
+
+		#filter-main {
+			clear: both;
+			display: block;
+		}
+
+		#filter-main li {
+			clear: both;
+			display: block;
+
+			margin-top: 30px;
+			padding-top: 30px;
+			border-top: 1px solid #cccccc;
+		}
+
+		#header .select-list {
+			margin-right: 20px;
+			float: left;
+
+		}
+
+		#header .select-list.disabled span{
+			background: #cccccc;
+			cursor: auto;
+		}
+
+		#header .select-list span {
+			cursor: pointer;
+			height: 30px;
+			width: 200px;
+			background: green;
+			color: #ffffff;
+			display: block;
+			text-align: center;
+			line-height: 30px;
+		}
+
 		.disabled span {
 			color: #cccccc
 		}
 
-		#filter-state li[data-action="true"] {
+		#filter-state li {
 			display: none;
+		}
+
+		#filter-state li[data-action="true"] {
+			display: block;
 		}
 
 		#filter-city li {
@@ -26,7 +72,7 @@
 
 
 	<div id="header">
-		<div id="filter-state">
+		<div id="filter-state" class="select-list">
 			<span>Selecione um estado</span>
 
 			<ul class="list">
@@ -62,7 +108,7 @@
 			</ul>
 		</div>	
 
-		<div id="filter-city">
+		<div id="filter-city" class="select-list">
 			<span>Selecione uma cidade</span>
 
 			<ul class="list"></ul>
