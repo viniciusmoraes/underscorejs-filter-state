@@ -138,10 +138,15 @@ Filter = {
 
 		$(document).on('click', '.' + this.selectButton + ' li', function(){
 			$(this).parent().siblings('span').empty();
-			console.log($(this).parent().parent()[0].id);
+			
 			if($(this).parent().parent()[0].id == _this.selectState){
 				var attr = $(this).text();
 				$(this).parent().siblings('span').text(attr);
+				$("#" + _this.selectCity).find("span")
+
+				if ($("#" + _this.selectCity).find("span").text() != "Selecione uma cidade") {
+					$("#" + _this.selectCity).find("span").empty().text("Selecione uma cidade");
+				}
 			}else {
 				var attr = $(this).attr("data-city");
 				$(this).parent().siblings('span').text(attr);
